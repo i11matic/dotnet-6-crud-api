@@ -1,0 +1,18 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+  pool: {}
+projectId: PROJECT_ID
+steps:
+- name: gcr.io/k8s-skaffold/pack
+  entrypoint: pack
+  dir: code
+  args:
+  - build
+  - $LOCATION-docker.pkg.dev/$PROJECT_ID/$_DOCKER_REGISTRY_NAME/$_IMAGE_NAME:$SHORT_SHA
+  - --builder
+  - gcr.io/buildpacks/builder:latest
+  - --network
+  - cloudbuild
+substitutions:
+    _IMAGE_NAME: dotnet6app
+    _DOCKER_REGISTRY_NAME: gke-test
