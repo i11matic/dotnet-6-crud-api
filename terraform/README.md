@@ -35,7 +35,6 @@ No modules.
 | <a name="input_push_cloud_build_file"></a> [push\_cloud\_build\_file](#input\_push\_cloud\_build\_file) | path to cloud build file | `string` | `"cloud-build/cloudbuild-push.yaml"` | no |
 | <a name="input_region"></a> [region](#input\_region) | The region to host the cluster in | `string` | n/a | yes |
 | <a name="input_repo_name"></a> [repo\_name](#input\_repo\_name) | Name of the repo | `string` | n/a | yes |
-| <a name="input_repo_owner"></a> [repo\_owner](#input\_repo\_owner) | Repository owner name | `string` | n/a | yes |
 | <a name="input_repo_url"></a> [repo\_url](#input\_repo\_url) | url of the repository | `string` | n/a | yes |
 
 ## Outputs

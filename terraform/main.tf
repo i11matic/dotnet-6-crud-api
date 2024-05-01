@@ -12,9 +12,8 @@ resource "google_cloudbuild_trigger" "gh-trigger-push" {
   location = var.region
   project  = var.project_id
 
-  github {
-    owner = var.repo_owner
-    name  = var.repo_name
+  repository_event_config {
+    repository = google_cloudbuildv2_repository.repository.id
     push {
       branch = var.branch_name
     }
@@ -28,9 +27,8 @@ resource "google_cloudbuild_trigger" "gh-trigger-pull-request" {
   location = var.region
   project  = var.project_id
 
-  github {
-    owner = var.repo_owner
-    name  = var.repo_name
+  repository_event_config {
+    repository = google_cloudbuildv2_repository.repository.id
     pull_request {
       branch = var.branch_name
     }

@@ -23,11 +23,6 @@ variable "repo_url" {
   description = "url of the repository"
 }
 
-variable "repo_owner" {
-  type        = string
-  description = "Repository owner name"
-}
-
 variable "branch_name" {
   type        = string
   description = "Branch name"

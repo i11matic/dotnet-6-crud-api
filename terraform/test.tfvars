@@ -8,5 +8,3 @@ repo_url = "https://github.com/i11matic/dotnet-6-crud-api.git"
 
 repo_name = "dotnet-6-crud-api"
 
-repo_owner = "i11matic"
-
