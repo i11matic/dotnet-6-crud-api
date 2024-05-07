@@ -40,3 +40,11 @@ variable "push_cloud_build_file" {
   description = "path to cloud build file"
   default     = "cloud-build/cloudbuild-push.yaml"
 }
+
+variable "secret_name" {
+
+}
+
+variable "secrets_file_path" {
+
+}

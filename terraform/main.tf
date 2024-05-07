@@ -36,3 +36,25 @@ resource "google_cloudbuild_trigger" "gh-trigger-pull-request" {
   include_build_logs = "INCLUDE_BUILD_LOGS_WITH_STATUS"
   filename           = var.pull_request_cloud_build_file
 }
+
+data "sops_file" "secret" {
+  source_file = var.secrets_file_path
+}
+
+
+resource "google_secret_manager_secret" "secret" {
+  project   = var.project_id
+  secret_id = var.secret_name
+  replication {
+    user_managed {
+      replicas {
+        location = var.region
+      }
+    }
+  }
+}
+
+resource "google_secret_manager_secret_version" "secret_version" {
+  secret      = google_secret_manager_secret.secret.id
+  secret_data = data.sops_file.secret.raw
+}
