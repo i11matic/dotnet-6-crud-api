@@ -63,7 +63,6 @@ variable "k8_namespaces" {
     labels      = map(string)
     annotations = map(string)
   })
-  default     = {}
   description = "Kubernetes namespace configuration"
 }
 
@@ -73,7 +72,6 @@ variable "k8_workload_identities" {
     namespace            = string
     roles                = list(string)
   })
-  default     = {}
   description = "Kubernetes workload identity configuration"
 }
 
