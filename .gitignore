@@ -81,3 +81,5 @@ tfplan
 
 
 **/.terraform.lock.hcl
+
+terraform/files/appsettings-unecrypted.json
