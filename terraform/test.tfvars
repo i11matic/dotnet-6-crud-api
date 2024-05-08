@@ -27,7 +27,7 @@ k8_namespace = {
 k8_workload_identity = {
   service_account_name = "app-test"
   namespace            = "foobar"
-  roles                = ["roles/cloudsql.client","roles/iam.serviceAccountTokenCreator"]
+  roles                = ["roles/cloudsql.client", "roles/iam.serviceAccountTokenCreator"]
 }
 
 k8_deployment_yaml = "./files/deployment.yaml"

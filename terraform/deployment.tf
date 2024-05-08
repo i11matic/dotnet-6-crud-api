@@ -38,7 +38,7 @@ data "kubectl_file_documents" "docs" {
 }
 
 resource "kubectl_manifest" "manifest" {
-  for_each  = data.kubectl_file_documents.docs.manifests
-  yaml_body = each.value
+  for_each   = data.kubectl_file_documents.docs.manifests
+  yaml_body  = each.value
   depends_on = [module.k8-workload-identity, google_secret_manager_secret.secret]
 }
