@@ -25,7 +25,7 @@ data "google_iam_policy" "acessor" {
   binding {
     role = "roles/secretmanager.secretAccessor"
     members = [
-      "serviceAccount:${module.k8-k8-workload-identity.gcp_service_account_email}"
+      "serviceAccount:${module.k8-workload-identity.gcp_service_account_email}"
     ]
   }
 }
