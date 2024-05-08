@@ -58,6 +58,7 @@ apiVersion: external-secrets.io/v1beta1
 kind: SecretStore
 metadata:
   name: dotnet6app-store
+  namespace: foobar
 spec:
   provider:
     gcpsm:
@@ -69,19 +70,19 @@ spec:
           clusterProjectID: gke-test-420601
           serviceAccountRef:
             name: app-test
-            namespace: foobar
 ---
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: database-credentials
+  name: dotnet6app-es
+  namespace: foobar
 spec:
   refreshInterval: 1h
   secretStoreRef:
     kind: SecretStore
     name: dotnet6app-store
   target:
-    name: dotnet-config
+    name: dotfile-secret
     creationPolicy: Owner
   data:
   - secretKey: dotnetAppConfig
