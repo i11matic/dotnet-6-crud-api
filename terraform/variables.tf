@@ -58,15 +58,16 @@ variable "gke_cluster_name" {
   description = "name of the gke cluster"
 }
 
-variable "k8_namespaces" {
+variable "k8_namespace" {
   type = object({
+    name        = string
     labels      = map(string)
     annotations = map(string)
   })
   description = "Kubernetes namespace configuration"
 }
 
-variable "k8_workload_identities" {
+variable "k8_workload_identity" {
   type = object({
     service_account_name = string
     namespace            = string

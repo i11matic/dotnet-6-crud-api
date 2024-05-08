@@ -1,6 +1,6 @@
 project_id = "gke-test-420601"
 
-region = "northamerica-northeast1"
+region = "us-west1"
 
 connection_name = "github-connector"
 

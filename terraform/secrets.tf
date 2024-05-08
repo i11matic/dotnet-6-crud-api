@@ -34,5 +34,5 @@ data "google_iam_policy" "acessor" {
 resource "google_secret_manager_secret_iam_policy" "policy" {
   project     = google_secret_manager_secret.secret.project
   secret_id   = google_secret_manager_secret.secret.secret_id
-  policy_data = data.google_iam_policy.admin.policy_data
+  policy_data = data.google_iam_policy.acessor.policy_data
 }
