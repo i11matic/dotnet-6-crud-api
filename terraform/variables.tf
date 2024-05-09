@@ -31,12 +31,53 @@ variable "branch_name" {
 
 variable "pull_request_cloud_build_file" {
   type        = string
-  description = "path to cloud build file"
+  description = "Path to cloud build file"
   default     = "cloud-build/cloudbuild-pull-request.yaml"
 }
 
 variable "push_cloud_build_file" {
   type        = string
-  description = "path to cloud build file"
+  description = "Path to cloud build file"
   default     = "cloud-build/cloudbuild-push.yaml"
+}
+
+variable "secret_name" {
+  type        = string
+  description = "Name of the secret to create"
+
+}
+
+variable "secrets_file_path" {
+  type        = string
+  description = "path to secrets file"
+
+}
+
+variable "gke_cluster_name" {
+  type        = string
+  description = "name of the gke cluster"
+}
+
+variable "k8_namespace" {
+  type = object({
+    name        = string
+    labels      = map(string)
+    annotations = map(string)
+  })
+  description = "Kubernetes namespace configuration"
+}
+
+variable "k8_workload_identity" {
+  type = object({
+    service_account_name = string
+    namespace            = string
+    roles                = list(string)
+  })
+  description = "Kubernetes workload identity configuration"
+}
+
+variable "k8_deployment_yaml" {
+  type        = string
+  description = "file name for kubernetes deployment"
+  default     = ""
 }
